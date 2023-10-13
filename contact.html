@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://portfolio-abd2c-default-rtdb.firebaseio.com"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="row2">
+                <a class="row21" href="Index.html">Home</a>
+                <a class="row22" href="projects.html">Projects</a>
+                <a class="row23" href="Acadmics.html">Acadmics</a>
+                <a class="row25" href="contact.html">Contact </a>
+
+
+            </div>
+            <div class="get">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="whats">
+
+                <p class="w1"> <img src="email.png" alt="whatsapp" width="50" height="55">
+                </p>
+                <p class="w12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail<br>
+                    jaldekarkrishna@gmail.com<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-mail me →
+                </p>
+            </div>
+            <div class="address">
+                <p class="w1"> <img src="address.png" alt="whatsapp" width="50" height="40">
+                </p>
+                <p class="add1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address<br>
+                    Nanded, Maharashtra<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Reach to me →
+                </p>
+            </div>
+            <div class="email">
+                <p class="w1"> <img src="whatsapp.png" alt="whatsapp" width="35" height="35">
+                </p>
+                <p class="em1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatsapp<br>
+                    +91-8180099535<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp Chat With Us →
+                </p>
+
+            </div>
+            <div class="form">
+                <h2 class="h2">Send Message</h2>
+                <form>
+                    <input type="text" value="Name" id="name" required class="n1">
+                    <br>
+                    <input type="text" value="feedback" id="feedback" required class="n3">
+                    <input type="Button" name="3" value="Resume" class="n4">
+                    <input type="submit" value="submit" class="n5" id="submit">
+                </form>
+                <script type="module">
+                    // Import the functions you need from the SDKs you need
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+                    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
+                    // Your web app's Firebase configuration
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyBiVTSfWhZNkrb4M34SCAZzzxJuTpvv-Uo",
+
+                        authDomain: "portfolio-abd2c.firebaseapp.com",
+
+                        databaseURL: "https://portfolio-abd2c-default-rtdb.firebaseio.com",
+
+                        projectId: "portfolio-abd2c",
+
+                        storageBucket: "portfolio-abd2c.appspot.com",
+
+                        messagingSenderId: "851729684432",
+
+                        appId: "1:851729684432:web:fccc2dd55b5eeab0a50bd5",
+
+                        measurementId: "G-V469EXE9JM"
+
+                    };
+
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+
+                    //get ref to database services
+                    const db = getDatabase(app);
+
+                    document.getElementById("submit").addEventListener('click', function (e) {
+                        e.preventDefault();
+                        set(ref(db, 'user/' + document.getElementById("name").value),
+                            {
+
+                                names: document.getElementById("name").value,
+                                feedbacks: document.getElementById("feedback").value
+
+
+                            });
+                        alert("Your Response Has Been Recorded !");
+                    })
+                </script>
+            </div>
+            <div class="footer">
+                <footer class="ft">
+                    <p style="color: rgb(0, 0, 0); font-weight: 500;"> © 2023 | All Rights Reserved.</p>
+                </footer>
+            </div>
+
+        </div>
