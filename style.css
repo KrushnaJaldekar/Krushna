@@ -857,3 +857,68 @@
     left: 1170px;
     font-family: 'AR One Sans', sans-serif;
 }
+
+.animated-text{
+    height: 100px;
+    width: 200px;
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    position: absolute;
+    left: 500px;
+    top: 330px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "Youtuber";
+    color: rgb(105, 30, 69);;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: rgb(229, 224, 224);
+    border-left: 2px solid rgb(105, 30, 69);;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px rgb(229, 224, 224);
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Krushna ";
+    }
+    21%,40%{
+        content: "Programer";
+    }
+    41%,60%{
+        content: "Developer";
+    }
+    61%,80%{
+        content: "Freelancer";
+    }
+    81%,100%{
+        content: "Hacker";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
